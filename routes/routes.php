@@ -32,6 +32,7 @@ else{
             }
             $user -> index();
             break;
+        
         case 'login':
             if(isset($_POST) && $method == 'POST'){
                 $user = new LoginController($method, $_POST);
@@ -45,6 +46,21 @@ else{
                 return;
             }
             break;
+
+        case 'productos':
+            if($method == 'POST' || $method == 'GET'){
+                $user = new ProductController($method, $_POST);
+                $user -> index();
+            }
+            else{
+                $json = array(
+                    "ruta:"=>"not found"
+                );
+                echo json_encode($json, true);
+                return;
+            }
+            break;
+
         default:
             $json = array(
                 "ruta:"=>"not found"

@@ -8,7 +8,7 @@ require_once("config.php");
 
 class Conection{
 
-    public $mensaje = "fdsgfdsgdfgdf";
+    public $mensaje = "hola";
 
     static public function connection(){
         $con = false;
